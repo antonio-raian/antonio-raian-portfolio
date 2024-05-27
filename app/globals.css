@@ -17,13 +17,9 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  display: grid;
+  width: 83.333333%;
+  background: #607d8b;
 }
 
 @layer utilities {
@@ -42,11 +38,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #a955f78f;
-  border: 1px #a955f7 solid;
+  background: #607d8b8f;
+  border: 1px #607d8b solid;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a955f7;
+  background: #607d8b;
 }

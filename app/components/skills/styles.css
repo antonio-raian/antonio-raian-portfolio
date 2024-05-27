@@ -1,0 +1,35 @@
+#skills {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#skills span {
+  font-size: 4vw;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+
+.skill-box {
+  padding: 1.5rem;
+  border: 2px solid white;
+}
+.skill-box label {
+  font-size: larger;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.skill-box p {
+}
+
+.a-before::before {
+  content: "<h1>";
+  margin-bottom: 5px;
+}
+
+.a-before::after {
+  content: "</h1>";
+}
