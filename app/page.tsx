@@ -10,10 +10,10 @@ import {
 
 export default function Home() {
   return (
-    <>
+    <div className="all-content">
       <MenuNavigation />
       <main className="flex min-h-screen flex-col items-center justify-between font-mono">
-        <Coffee />
+        {/* <Coffee /> */}
         <Hero />
         <Skills />
         <Projects />
@@ -21,6 +21,6 @@ export default function Home() {
         <Contact />
       </main>
       <footer>Pé</footer>
-    </>
+    </div>
   );
 }

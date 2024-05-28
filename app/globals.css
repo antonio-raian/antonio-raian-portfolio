@@ -17,9 +17,16 @@
 }
 
 body {
-  display: grid;
-  width: 83.333333%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #607d8b;
+}
+
+.all-content {
+  width: 100%;
+  max-width: 2000px;
+  background-color: #f1f1f1;
 }
 
 @layer utilities {

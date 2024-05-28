@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-#skills span {
+#skills .title {
   font-size: 4vw;
   text-transform: uppercase;
   font-weight: 600;
@@ -14,17 +14,20 @@
 }
 
 .skill-box {
-  padding: 1.5rem;
-  border: 2px solid white;
-}
-.skill-box label {
-  font-size: larger;
-  text-transform: uppercase;
-  font-weight: bolder;
-}
-.skill-box p {
+  padding: 3rem;
 }
 
+.skill-box .label {
+  display: flex;
+  margin-left: 10px;
+  font-size: x-large;
+  text-transform: uppercase;
+  font-weight: 900;
+  align-items: baseline;
+}
+
+.skill-box p {
+}
 .a-before::before {
   content: "<h1>";
   margin-bottom: 5px;
