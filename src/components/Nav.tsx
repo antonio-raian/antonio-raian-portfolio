@@ -28,7 +28,7 @@ export const menuLinks = [
 const Nav = () => {
   const pathname = usePathname();
   return (
-    <nav className="xl:flex gap-8">
+    <nav className="lg:flex gap-8 lg:justify-between">
       {menuLinks.map((link, index) => (
         <Link
           href={link.href}
