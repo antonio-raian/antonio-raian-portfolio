@@ -5,7 +5,7 @@ import CountUp from "react-countup";
 const stats = [
   {
     name: "Years of Experience",
-    value: new Date().getFullYear() - 2019,
+    value: new Date().getFullYear() - 2018,
     suffix: "+",
   },
   {

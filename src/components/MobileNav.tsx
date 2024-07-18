@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { menuLinks } from "./Nav";
 import Link from "next/link";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
 import { CiMenuFries } from "react-icons/ci";
 
 const MobileNav = () => {
@@ -23,15 +23,16 @@ const MobileNav = () => {
         </div>
         <nav className="flex flex-col justify-center items-center gap-8">
           {menuLinks.map((link, index) => (
-            <Link
-              href={link.href}
-              key={index}
-              className={`${
-                link.href === pathname &&
-                "text-accent border-b-2 border-dotted border-accent"
-              } capitalize text-xl hover:text-accent transition-all`}
-            >
-              {link.name}
+            <Link href={link.href} key={index}>
+              <SheetClose
+                key={index}
+                className={`${
+                  link.href === pathname &&
+                  "text-accent border-b-2 border-dotted border-accent"
+                } capitalize text-xl hover:text-accent transition-all`}
+              >
+                {link.name}
+              </SheetClose>
             </Link>
           ))}
         </nav>
