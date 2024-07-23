@@ -1,39 +1,10 @@
 "use client";
 
+import { services } from "@/mocks/professional";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowDownRight } from "react-icons/bs";
 
-const services = [
-  {
-    num: "01",
-    title: "Software Architeture",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    href: "",
-  },
-  {
-    num: "02",
-    title: "Web Development",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    href: "",
-  },
-  {
-    num: "03",
-    title: "Mobile Development",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    href: "",
-  },
-  {
-    num: "04",
-    title: "Content Writing",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    href: "",
-  },
-];
 const Services = () => {
   return (
     <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">

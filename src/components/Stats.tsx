@@ -1,29 +1,8 @@
 "use client";
 
+import { stats } from "@/mocks/professional";
 import CountUp from "react-countup";
 
-const stats = [
-  {
-    name: "Years of Experience",
-    value: new Date().getFullYear() - 2018,
-    suffix: "+",
-  },
-  {
-    name: "Projects Completed",
-    value: 5,
-    suffix: "",
-  },
-  {
-    name: "Technologies Mastered",
-    value: 5,
-    suffix: "",
-  },
-  {
-    name: "Code Commits",
-    value: 500,
-    suffix: "+",
-  },
-];
 const Stats = () => {
   return (
     <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">

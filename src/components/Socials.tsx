@@ -1,16 +1,6 @@
+import { socials } from "@/mocks/personal";
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-const socials = [
-  {
-    icon: <FaGithub />,
-    link: "https://github.com/antonio-mendes",
-  },
-  {
-    icon: <FaLinkedin />,
-    link: "https://www.linkedin.com/in/antonio-raian-mendes-42887ba4/",
-  },
-];
 const Socials = ({
   containerStyles,
   iconStyles,
