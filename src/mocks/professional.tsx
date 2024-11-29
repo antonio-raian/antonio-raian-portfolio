@@ -1,19 +1,32 @@
 import {
+  FaAws,
   FaCss3,
   FaGit,
+  FaGithub,
   FaHtml5,
   FaJs,
   FaNodeJs,
   FaReact,
 } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import {
+  SiGooglecloud,
+  SiMongodb,
+  SiNestjs,
+  SiNextdotjs,
+  SiPostgresql,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+import { GrConnect, GrDocker } from "react-icons/gr";
+import { MdDevicesOther, MdOutlineDesignServices } from "react-icons/md";
+import { PiPlugsConnectedBold } from "react-icons/pi";
 
 // interfaces
 interface iResume {
   title: string;
   description: string;
   itens?: iItens[];
-  tools?: iSkillItens[];
+  tools: iSkillItens[];
 }
 
 interface iItens {
@@ -25,179 +38,118 @@ interface iItens {
 
 interface iSkillItens {
   name: string;
-  icon: JSX.Element;
+  component: JSX.Element;
 }
-// Resume
-const experiences: iResume = {
-  title: "My Experience",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
-  itens: [
-    {
-      instituition: "Company Name",
-      degree: "Position",
-      date: "2020 - 2021",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
-    },
-    {
-      instituition: "Company Name",
-      degree: "Position",
-      date: "2020 - 2021",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
-    },
-    {
-      instituition: "Company Name",
-      degree: "Position",
-      date: "2020 - 2021",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
-    },
-    {
-      instituition: "Company Name",
-      degree: "Position",
-      date: "2020 - 2021",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
-    },
-  ],
-};
 
-const educations: iResume = {
-  title: "My Education",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
-  itens: [
-    {
-      instituition: "Instituition Name",
-      degree: "Position",
-      date: "2020 - 2021",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
-    },
-    {
-      instituition: "Instituition Name",
-      degree: "Position",
-      date: "2020 - 2021",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
-    },
-    {
-      instituition: "Instituition Name",
-      degree: "Position",
-      date: "2020 - 2021",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
-    },
-    {
-      instituition: "Instituition Name",
-      degree: "Position",
-      date: "2020 - 2021",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
-    },
-  ],
-};
+export interface iStat {
+  name: string;
+  value: number;
+  suffix?: string;
+  prefix?: string;
+}
 
-const skills: iResume = {
-  title: "My Skills",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;",
-  tools: [
-    {
-      name: "HTML 5",
-      icon: <FaHtml5 />,
-    },
-    {
-      name: "CSS 3",
-      icon: <FaCss3 />,
-    },
-    {
-      name: "Javascript",
-      icon: <FaJs />,
-    },
-    {
-      name: "React",
-      icon: <FaReact />,
-    },
-    {
-      name: "Next JS",
-      icon: <SiNextdotjs />,
-    },
-    {
-      name: "Tailwind",
-      icon: <SiTailwindcss />,
-    },
-    {
-      name: "Git",
-      icon: <FaGit />,
-    },
-    {
-      name: "Node JS",
-      icon: <FaNodeJs />,
-    },
-  ],
-};
-
-const stats: { name: string; value: number; suffix: string }[] = [
+const skills: iSkillItens[] = [
+  // Linguagens
   {
-    name: "Years of Experience",
-    value: new Date().getFullYear() - 2018,
-    suffix: "+",
+    name: "Javascript",
+    component: <FaJs className="w-14 h-14" />,
   },
   {
-    name: "Projects Completed",
-    value: 5,
-    suffix: "",
+    name: "Typescript",
+    component: <SiTypescript className="w-14 h-14" />,
   },
   {
-    name: "Technologies Mastered",
-    value: 5,
-    suffix: "",
+    name: "HTML 5",
+    component: <FaHtml5 className="w-14 h-14" />,
   },
   {
-    name: "Code Commits",
-    value: 500,
-    suffix: "+",
+    name: "CSS 3",
+    component: <FaCss3 className="w-14 h-14" />,
+  },
+  // Framework
+  {
+    name: "Node JS",
+    component: <FaNodeJs className="w-14 h-14" />,
+  },
+  {
+    name: "Next JS",
+    component: <SiNextdotjs className="w-14 h-14" />,
+  },
+  {
+    name: "Nest JS",
+    component: <SiNestjs className="w-14 h-14" />,
+  },
+  // Bibliotecas
+  {
+    name: "React",
+    component: <FaReact className="w-14 h-14" />,
+  },
+  {
+    name: "Tailwind",
+    component: <SiTailwindcss className="w-14 h-14" />,
+  },
+  // Banco de Dados
+  {
+    name: "PostgreSQL",
+    component: <SiPostgresql className="w-14 h-14" />,
+  },
+  {
+    name: "MongoDB",
+    component: <SiMongodb className="w-14 h-14" />,
+  },
+  // Ferramentas
+  {
+    name: "Github",
+    component: <FaGithub className="w-14 h-14" />,
+  },
+  {
+    name: "Docker",
+    component: <GrDocker className="w-14 h-14" />,
+  },
+  {
+    name: "AWS",
+    component: <FaAws className="w-14 h-14" />,
+  },
+  {
+    name: "GCP",
+    component: <SiGooglecloud className="w-14 h-14" />,
   },
 ];
 
 // Services
-const services: {
+export interface iServices {
   num: string;
   title: string;
   description: string;
   href: string;
-}[] = [
+  component?: JSX.Element;
+}
+const services: iServices[] = [
   {
     num: "01",
-    title: "Software Architeture",
+    title: "Desenvolvimento de Sistemas",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    href: "",
+      "Posso lhe ajudar a desenvolver um sistema computacional, desde o planejamento, design até a implantação.",
+    href: "/contact?service=desenvolvimento-de-sistemas",
+    component: <MdDevicesOther className="w-12 h-12" />,
   },
   {
     num: "02",
-    title: "Web Development",
+    title: "Integrações",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    href: "",
+      "Desenvolvimento de interfaces para comunicações com sistemas externos, como APIs, bancos de dados, etc.",
+    href: "/contact?service=integrações",
+    // component: <PiPlugsConnectedBold className="w-14 h-14" />,
+    component: <GrConnect className="w-12 h-12" />,
   },
   {
     num: "03",
-    title: "Mobile Development",
+    title: "UI/UX",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    href: "",
-  },
-  {
-    num: "04",
-    title: "Content Writing",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-    href: "",
+      "Criação de uma identidade visual atrativa e intuitiva para o seu produto ou serviço, garantindo uma experiência de usuário agradação.",
+    href: "/contact?service=ui-ux",
+    component: <MdOutlineDesignServices className="w-12 h-12" />,
   },
 ];
 
-export { experiences, educations, skills, stats, services };
+export { skills, services };

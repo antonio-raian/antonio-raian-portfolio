@@ -9,16 +9,16 @@ export const menuLinks = [
     href: "/",
   },
   {
+    name: "sobre",
+    href: "#about",
+  },
+  {
     name: "services",
-    href: "/services",
+    href: "#services",
   },
   {
-    name: "resume",
-    href: "/resume",
-  },
-  {
-    name: "work",
-    href: "/work",
+    name: "projetos",
+    href: "#projects",
   },
   {
     name: "contact",
