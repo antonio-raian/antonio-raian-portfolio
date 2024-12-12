@@ -1,4 +1,4 @@
-const projects: {
+export type iProject = {
   num: string;
   category: string;
   title: string;
@@ -11,81 +11,48 @@ const projects: {
   image: string;
   live: string;
   github: string;
-}[] = [
+};
+
+const projects: iProject[] = [
   {
     num: "01",
-    category: "Software Architeture",
-    title: "Software Architeture",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum.",
+    category: "Sistemas WEB",
+    title: "Cacttus",
+    description: "Sistema para gestão de candidatudas em vagas de emprego.",
     href: "",
     stack: [
       {
-        name: "HTML",
-        // icon: <FaHtml5 />,
+        name: "Next.js",
       },
       {
-        name: "CSS",
-        // icon: <FaCss3 />,
+        name: "PostgreSQL",
       },
       {
-        name: "Javascript",
-        // icon: <FaJs />,
+        name: "Tailwind",
       },
     ],
-    image: "/assets/work/thumb1.png",
-    live: "ascascasc",
-    github: "github.com",
+    image: "/assets/work/cacttus.png",
+    live: "https://cacttus-demonstration.vercel.app/",
+    github: "https://github.com/antonio-raian/cacttus-demonstration",
   },
   {
     num: "02",
-    category: "Software Architeture",
-    title: "Software Architeture",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum.",
+    category: "UI/UX",
+    title: "Portfólio WEB",
+    description: "Projeto figma deste portfólio.",
     href: "",
     stack: [
       {
-        name: "HTML",
-        // icon: <FaHtml5 />,
+        name: "Figma",
       },
       {
-        name: "CSS",
-        // icon: <FaCss3 />,
-      },
-      {
-        name: "Javascript",
-        // icon: <FaJs />,
+        name: "UI/UX",
       },
     ],
-    image: "/assets/work/thumb2.png",
-    live: "",
-    github: "",
-  },
-  {
-    num: "03",
-    category: "Software Architeture",
-    title: "Software Architeture",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum.",
-    href: "",
-    stack: [
-      {
-        name: "HTML",
-        // icon: <FaHtml5 />,
-      },
-      {
-        name: "CSS",
-        // icon: <FaCss3 />,
-      },
-      {
-        name: "Javascript",
-        // icon: <FaJs />,
-      },
-    ],
-    image: "/assets/work/thumb3.png",
-    live: "",
-    github: "",
+    image: "/assets/work/portfolio.png",
+    live: "https://www.figma.com/proto/dqQdYgEoBGNguZUL7OlEhX/Portfolio?page-id=0%3A1&node-id=28-2&node-type=canvas&viewport=413%2C200%2C0.26&t=vqID7kvA8ls6U8jh-1&scaling=scale-down&content-scaling=fixed",
+    github:
+      "https://www.figma.com/design/dqQdYgEoBGNguZUL7OlEhX/Portfolio?node-id=0-1&t=oXwDmR0loiRL1Ozb-1",
   },
 ];
 

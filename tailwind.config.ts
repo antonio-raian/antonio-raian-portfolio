@@ -22,6 +22,7 @@ const config = {
     },
     fontFamily: {
       primary: "var(--font-jetbrainsMono)",
+      sans: ["Poppins", "sans-serif"],
     },
     extend: {
       colors: {
