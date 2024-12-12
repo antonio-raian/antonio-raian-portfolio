@@ -7,7 +7,7 @@ interface MyLabelProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 const MyLabel = ({ text, cursor, className }: MyLabelProps) => {
   return (
-    <div className="text-center">
+    <div className="text-center z-20">
       <span className={cn("text-zinc-100 text-xl font-semibold", className)}>
         {text}{" "}
       </span>

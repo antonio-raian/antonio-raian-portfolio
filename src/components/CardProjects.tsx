@@ -16,7 +16,7 @@ const Card = ({ children }: { children: React.ReactNode }) => {
     <motion.div
       whileHover={{ scale: 1.2 }}
       whileTap={{ scale: 0.8 }}
-      className="w-full bg-zinc-900 rounded-xl flex-col justify-start items-center inline-flex overflow-hidden shadow-md shadow-gray-400/20 max-w-96"
+      className="w-full bg-zinc-900 rounded-xl flex-col justify-start items-center inline-flex overflow-hidden shadow-md shadow-gray-400/20 max-w-96 h-full"
     >
       {children}
     </motion.div>
@@ -34,10 +34,12 @@ const CardProjects = ({ project }: { project: iProject }) => {
           height={100}
           alt={""}
         />
-        <div className="px-5 py-3.5 flex-col justify-center items-center gap-5 flex">
+        <div className="px-5 py-3.5 flex-col justify-center items-center gap-5 flex h-full">
           <div className="font-semibold text-center text-white flex-col justify-center items-center gap-1 flex">
             <div className="text-xl leading-normal">{project.title}</div>
-            <div className="text-xs leading-tight">{project.description}</div>
+            <div className="text-xs leading-tight line-clamp-2">
+              {project.description}
+            </div>
           </div>
           <div className="py-2 justify-center items-center gap-2 inline-flex">
             {project.stack.map((item, index) => (
@@ -74,7 +76,7 @@ const CardService = ({ service }: { service: iServices }) => {
   return (
     <Link href={service.href}>
       <Card>
-        <div className="w-full px-2.5 py-5 flex-col justify-center flex">
+        <div className="w-full px-2.5 py-5 flex-col justify-center flex h-full">
           <div className="px-5 py-2.5 justify-start items-center inline-flex">
             {service.component}
           </div>

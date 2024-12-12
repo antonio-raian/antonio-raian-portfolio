@@ -20,12 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className="scroll-pt-16">
       <body className={poppins.className}>
         <main className="flex flex-col min-h-screen overflow-hidden">
           <Header />
           {children}
-          <Footer />
         </main>
       </body>
     </html>

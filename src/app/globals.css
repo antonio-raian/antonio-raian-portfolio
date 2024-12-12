@@ -24,6 +24,12 @@
   }
 }
 
+@layer components {
+  .container {
+    @apply mx-auto max-w-4xl px-6;
+  }
+}
+
 @keyframes blink {
   0% {
     opacity: 0;

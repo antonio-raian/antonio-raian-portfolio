@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative sm:w-full h-svh flex-col justify-center items-center flex gap-10 bg-primary px-10"
+      className="container mx-auto relative sm:w-full h-svh flex-col justify-center items-center flex gap-10 bg-primary px-10"
     >
       <div className="absolute top-52 flex-col justify-center items-center flex">
         <h3 className="text-center text-zinc-400 text-lg font-medium leading-7">

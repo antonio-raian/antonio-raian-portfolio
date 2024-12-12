@@ -7,8 +7,8 @@ import HireMe from "./HireMe";
 
 const Header = () => {
   return (
-    <header className="flex w-full h-20 shadow-zinc-750 shadow-md bg-primary text-white text-lg font-bold z-50 fixed justify-center">
-      <div className="max-w-6xl container m-auto flex justify-between items-center p-4">
+    <header className="flex w-full h-20 shadow-zinc-750 shadow-md bg-primary/95 text-white text-lg font-bold z-50 fixed justify-center">
+      <div className="w-full max-w-6xl mx-auto flex justify-between items-center p-4">
         {/* Logo */}
         <Logo />
         {/* Desktop Nav */}

@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 const HireMe = () => {
   return (
-    <Link href="#contact">
+    <Link href="/contact">
       <Button>Entre em contato!</Button>
     </Link>
   );

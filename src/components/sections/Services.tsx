@@ -10,7 +10,7 @@ const Services = () => {
       className="relative w-full pt-3 pb-12 flex-col justify-start items-center gap-5 inline-flex"
     >
       <MyLabel text="Serviços" />
-      <div className="flex flex-wrap flex-col gap-6 max-w-[90vw]">
+      <div className="container flex flex-wrap gap-6 w-full px-5 justify-center">
         {services.map((service, index) => (
           <CardService key={index} service={service} />
         ))}

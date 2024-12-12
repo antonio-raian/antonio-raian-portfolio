@@ -130,7 +130,7 @@ const services: iServices[] = [
     title: "Desenvolvimento de Sistemas",
     description:
       "Posso lhe ajudar a desenvolver um sistema computacional, desde o planejamento, design até a implantação.",
-    href: "/contact?service=desenvolvimento-de-sistemas",
+    href: "/contact?service=development",
     component: <MdDevicesOther className="w-12 h-12" />,
   },
   {
@@ -138,7 +138,7 @@ const services: iServices[] = [
     title: "Integrações",
     description:
       "Desenvolvimento de interfaces para comunicações com sistemas externos, como APIs, bancos de dados, etc.",
-    href: "/contact?service=integrações",
+    href: "/contact?service=integrations",
     // component: <PiPlugsConnectedBold className="w-14 h-14" />,
     component: <GrConnect className="w-12 h-12" />,
   },
@@ -152,4 +152,11 @@ const services: iServices[] = [
   },
 ];
 
-export { skills, services };
+const servicesMensages: Record<string, string> = {
+  development: "Poderia me ajudar com o desenvolvimento de um sistema?",
+  integrations:
+    "Poderia me ajudar com a conectar meu sistema com outros sistemas?",
+  "ui-ux": "Poderia me ajudar com o design do meu produto?",
+};
+
+export { skills, services, servicesMensages };
