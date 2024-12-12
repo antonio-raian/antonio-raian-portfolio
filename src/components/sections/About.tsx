@@ -5,6 +5,7 @@ import { FiDownload } from "react-icons/fi";
 import Stats from "../Stats";
 import Photo from "../Photo";
 import MyLabel from "../ui/my-page-label";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -84,14 +85,20 @@ const About = () => {
             Para mais informações sobre mim, clique no botão abaixo e baixe meu
             currículo.
           </span>
-          <Button
-            variant="outline"
-            size={"lg"}
-            className="uppercase flex items-center gap-2"
+
+          <Link
+            href="https://drive.google.com/file/d/1p3iZzNL8t65-s5uXcsjm8V1i_AEDjfPn/view?usp=sharing"
+            target="_blank"
           >
-            <span>Download CV</span>
-            <FiDownload className="text-xl" />
-          </Button>
+            <Button
+              variant="outline"
+              size={"lg"}
+              className="uppercase flex items-center gap-2 w-full"
+            >
+              <span>Download Currículo</span>
+              <FiDownload className="text-xl" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

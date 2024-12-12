@@ -18,6 +18,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useRouter, useSearchParams } from "next/navigation";
 import { servicesMensages } from "@/mocks/professional";
 import { applyPhoneMask } from "@/lib/utils";
+import { sendMail } from "@/lib/send-mail";
 
 export function ContactForm() {
   const router = useRouter();
@@ -62,12 +63,22 @@ export function ContactForm() {
 
   const onSubmit = async (values: z.infer<typeof formContactSchema>) => {
     try {
-      // Enviar mensagem para o email do profissional
+      const text = `Nome: ${values.nome}\nE-mail: ${values.email}\nTelefone: ${values.phone}\nMensagem: ${values.mensagem}`;
+
+      const resp = await sendMail({
+        email: values.email || "",
+        subject: `Contato Novo Cliente - ${values.nome} - ${service}`,
+        text,
+      });
+
+      if (resp?.messageId) {
+        return router.push("/success");
+      }
+      console.error(resp);
     } catch (error) {
+      console.error(error);
     } finally {
       console.log("Formulário enviado");
-
-      router.push("/success");
     }
   };
 
