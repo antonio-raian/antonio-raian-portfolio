@@ -1,5 +1,5 @@
 import { ContactForm } from "@/components/ContactForm";
-import React from "react";
+import React, { Suspense } from "react";
 
 const Contact = () => {
   return (
@@ -7,7 +7,9 @@ const Contact = () => {
       id="contact"
       className="relative w-full h-svh pt-3 flex-col justify-center items-center inline-flex"
     >
-      <ContactForm />
+      <Suspense>
+        <ContactForm />
+      </Suspense>
     </section>
   );
 };

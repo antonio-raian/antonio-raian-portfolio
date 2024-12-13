@@ -1,6 +1,5 @@
 import AllRight from "@/components/AllRight";
-import Footer from "@/components/Footer";
-import Socials from "@/components/Socials";
+import { ReCaptchaProvider } from "next-recaptcha-v3";
 import React from "react";
 
 const ContactLayout = ({
@@ -9,10 +8,10 @@ const ContactLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div>
+    <ReCaptchaProvider language="pt-BR">
       {children}
       <AllRight />
-    </div>
+    </ReCaptchaProvider>
   );
 };
 
