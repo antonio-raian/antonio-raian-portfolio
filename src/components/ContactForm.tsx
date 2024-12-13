@@ -19,15 +19,20 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { servicesMensages } from "@/mocks/professional";
 import { applyPhoneMask } from "@/lib/utils";
 import { sendMail } from "@/lib/send-mail";
+import { useReCaptcha } from "next-recaptcha-v3";
+import { useState } from "react";
 
 export function ContactForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const { executeRecaptcha } = useReCaptcha();
+
   const service = searchParams.get("service");
+  const [status, setStatus] = useState<string | null>(null);
 
   const formContactSchema = z
     .object({
-      nome: z.string().min(2, {
+      name: z.string().min(2, {
         message: "O nome deve ter pelo menos 2 caracteres.",
       }),
       email: z
@@ -42,7 +47,7 @@ export function ContactForm() {
         .regex(/^\(\d{2}\) \d{3} \d{3} \d{3}$/, "Formato inválido")
         .optional()
         .or(z.string().length(0)),
-      mensagem: z.string().min(10, {
+      message: z.string().min(10, {
         message: "A mensagem deve ter pelo menos 10 caracteres.",
       }),
     })
@@ -54,31 +59,36 @@ export function ContactForm() {
   const form = useForm<z.infer<typeof formContactSchema>>({
     resolver: zodResolver(formContactSchema),
     defaultValues: {
-      nome: "",
+      name: "",
       email: "",
       phone: "",
-      mensagem: servicesMensages[service as string] || "",
+      message: servicesMensages[service as string] || "",
     },
   });
 
   const onSubmit = async (values: z.infer<typeof formContactSchema>) => {
     try {
-      const text = `Nome: ${values.nome}\nE-mail: ${values.email}\nTelefone: ${values.phone}\nMensagem: ${values.mensagem}`;
+      const recaptchaToken = await executeRecaptcha("contact_form");
 
-      const resp = await sendMail({
-        email: values.email || "",
-        subject: `Contato Novo Cliente - ${values.nome} - ${service}`,
-        text,
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...values, recaptchaToken }),
       });
 
-      if (resp?.messageId) {
+      if (response.ok) {
+        setStatus("Mensagem enviada com sucesso!");
+        form.reset();
+
         return router.push("/success");
+      } else {
+        const result = await response.json();
+        setStatus(result.message || "Erro ao enviar mensagem.");
       }
-      console.error(resp);
+      console.error(response);
     } catch (error) {
+      setStatus("Erro inesperado. Tente novamente.");
       console.error(error);
-    } finally {
-      console.log("Formulário enviado");
     }
   };
 
@@ -89,7 +99,7 @@ export function ContactForm() {
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
             control={form.control}
-            name="nome"
+            name="name"
             render={({ field }) => (
               <FormItem>
                 <div className="flex justify-between items-center">
@@ -152,7 +162,7 @@ export function ContactForm() {
           />
           <FormField
             control={form.control}
-            name="mensagem"
+            name="message"
             render={({ field }) => (
               <FormItem>
                 <div className="flex justify-between items-center">
@@ -177,6 +187,7 @@ export function ContactForm() {
           </Button>
         </form>
       </Form>
+      {status && <p>{status}</p>}
     </section>
   );
 }
