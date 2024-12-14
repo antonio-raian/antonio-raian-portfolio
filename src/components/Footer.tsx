@@ -23,7 +23,6 @@ const Footer = () => {
         <Button
           className="bg-gray-400 gap-2.5 inline-flex text-primary"
           onClick={() => {
-            console.log("fale comigo");
             router.push("/contact");
           }}
         >

@@ -14,11 +14,9 @@ export async function POST(req: Request) {
     );
     const recaptchaData = await recaptchaResponse.json();
 
-    console.log({ recaptchaData });
-
     if (!recaptchaData.success || recaptchaData.score < 0.5) {
-      return Response.json({
-        message: "Falha na verificação do reCAPTCHA.",
+      return new Response("E_RECAPTCHA: Falha na verificação do reCAPTCHA.", {
+        status: 400,
       });
     }
 
@@ -29,10 +27,16 @@ export async function POST(req: Request) {
     });
 
     if (resp?.messageId)
-      Response.json({ message: "Email enviado com sucesso!" });
-    else Response.error();
+      return Response.json({
+        message: "Email enviado com sucesso!",
+      });
+
+    Response.error();
   } catch (error) {
-    console.log({ error });
-    Response.json({ message: "Erro ao processar a requisição." });
+    console.error({ error });
+
+    new Response(`E_CONTACT: Erro ao enviar o email.`, {
+      status: 500,
+    });
   }
 }

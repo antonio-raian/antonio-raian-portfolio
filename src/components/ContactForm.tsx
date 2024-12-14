@@ -67,10 +67,7 @@ export function ContactForm() {
 
   const onSubmit = async (values: z.infer<typeof formContactSchema>) => {
     try {
-      console.log("Cheguei aqui");
       const recaptchaToken = await executeRecaptcha("contact_form");
-
-      console.log({ recaptchaToken });
 
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -84,10 +81,10 @@ export function ContactForm() {
 
         return router.push("/success");
       } else {
-        const result = await response.json();
-        setStatus(result.message || "Erro ao enviar mensagem.");
+        const result = await response.text();
+        console.error(result);
+        setStatus("Erro ao enviar mensagem.");
       }
-      console.error(response);
     } catch (error) {
       setStatus("Erro inesperado. Tente novamente.");
       console.error(error);
