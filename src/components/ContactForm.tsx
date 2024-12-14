@@ -18,7 +18,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { useRouter, useSearchParams } from "next/navigation";
 import { servicesMensages } from "@/mocks/professional";
 import { applyPhoneMask } from "@/lib/utils";
-import { sendMail } from "@/lib/send-mail";
 import { useReCaptcha } from "next-recaptcha-v3";
 import { useState } from "react";
 
@@ -59,16 +58,19 @@ export function ContactForm() {
   const form = useForm<z.infer<typeof formContactSchema>>({
     resolver: zodResolver(formContactSchema),
     defaultValues: {
-      name: "",
+      name: "Antonio",
       email: "",
-      phone: "",
-      message: servicesMensages[service as string] || "",
+      phone: "74999762668",
+      message: servicesMensages[service as string] || "Tem que ter mais de 10",
     },
   });
 
   const onSubmit = async (values: z.infer<typeof formContactSchema>) => {
     try {
+      console.log("Cheguei aqui");
       const recaptchaToken = await executeRecaptcha("contact_form");
+
+      console.log({ recaptchaToken });
 
       const response = await fetch("/api/contact", {
         method: "POST",

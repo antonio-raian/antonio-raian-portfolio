@@ -8,7 +8,10 @@ const ContactLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <ReCaptchaProvider language="pt-BR">
+    <ReCaptchaProvider
+      accessKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+      language="pt-BR"
+    >
       {children}
       <AllRight />
     </ReCaptchaProvider>
