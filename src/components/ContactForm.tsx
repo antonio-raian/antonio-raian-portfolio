@@ -58,10 +58,10 @@ export function ContactForm() {
   const form = useForm<z.infer<typeof formContactSchema>>({
     resolver: zodResolver(formContactSchema),
     defaultValues: {
-      name: "Antonio",
+      name: "",
       email: "",
-      phone: "74999762668",
-      message: servicesMensages[service as string] || "Tem que ter mais de 10",
+      phone: "",
+      message: servicesMensages[service as string] || "",
     },
   });
 
