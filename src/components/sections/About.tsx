@@ -23,7 +23,7 @@ const About = () => {
         {/* Text */}
         <div className="text-center text-xl font-light leading-normal flex flex-col gap-10">
           <span>
-            Me chamo
+            Me chamo{" "}
             <span className="font-bold underline  decoration-accent decoration-2 underline-offset-4">
               Antonio
             </span>
