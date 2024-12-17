@@ -17,11 +17,11 @@ export const menuLinks = [
     href: "/#projects",
   },
   {
-    name: "services",
+    name: "serviços",
     href: "/#services",
   },
   {
-    name: "contact",
+    name: "contato",
     href: "/contact",
   },
 ];

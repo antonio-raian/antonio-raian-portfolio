@@ -47,7 +47,7 @@ const MobileNav = () => {
             </Link>
           ))}
         </nav>
-        <HireMe />
+        {/* <HireMe /> */}
       </SheetContent>
     </Sheet>
   );
