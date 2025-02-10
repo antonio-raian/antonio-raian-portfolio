@@ -13,7 +13,7 @@ const AllRight = () => {
           © {new Date().getFullYear()} - Todos direitos reservados.
         </span>
         <span className="text-center text-primary text-xs font-semibold leading-none">
-          Desenvolvido com 💚 por @antonio-raian
+          Desenvolvido com 💜 por @antonio-raian
         </span>
       </div>
     </div>

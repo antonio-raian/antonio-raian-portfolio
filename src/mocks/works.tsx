@@ -50,9 +50,9 @@ const projects: iProject[] = [
       },
     ],
     image: "/assets/work/portfolio.png",
-    live: "https://www.figma.com/proto/dqQdYgEoBGNguZUL7OlEhX/Portfolio?page-id=0%3A1&node-id=28-2&node-type=canvas&viewport=413%2C200%2C0.26&t=vqID7kvA8ls6U8jh-1&scaling=scale-down&content-scaling=fixed",
+    live: "https://www.figma.com/proto/dqQdYgEoBGNguZUL7OlEhX/Portfolio?page-id=0%3A1&node-id=28-2&p=f&viewport=306%2C-1556%2C0.66&t=rsW2IlBPwzu76Byt-1&scaling=scale-down&content-scaling=fixed",
     github:
-      "https://www.figma.com/design/dqQdYgEoBGNguZUL7OlEhX/Portfolio?node-id=0-1&t=oXwDmR0loiRL1Ozb-1",
+      "https://www.figma.com/design/dqQdYgEoBGNguZUL7OlEhX/Portfolio?node-id=28-2&t=arwuP0qRBHjv4LRW-1",
   },
 ];
 

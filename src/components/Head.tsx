@@ -14,7 +14,6 @@ const Header = () => {
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
           <Nav />
-          {/* <HireMe /> */}
         </div>
 
         <div className="lg:hidden">
