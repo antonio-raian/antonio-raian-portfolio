@@ -21,7 +21,7 @@ const Footer = () => {
           </span>
         </div>
         <Button
-          className="bg-gray-400 gap-2.5 inline-flex text-primary"
+          className="bg-gray-400 gap-2.5 inline-flex"
           onClick={() => {
             router.push("/contact");
           }}
